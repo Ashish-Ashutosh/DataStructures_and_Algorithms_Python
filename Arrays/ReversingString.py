@@ -16,6 +16,7 @@ def reverseString(input):
 
 
 def reverseString2(input):
+    #pythons shortcut method to reverse a string
     outputString = input[::-1]
     print(outputString)
 

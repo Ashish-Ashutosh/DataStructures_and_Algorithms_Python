@@ -12,6 +12,7 @@ class MyOwnArray:
         return self.data[index]
 
     def push(self, item):
+        #first insert the item and then increment the index
         self.data[self.length] = item
         self.length = self.length + 1
 
@@ -48,7 +49,7 @@ myownarray = MyOwnArray()
 myownarray.push('a')
 myownarray.push('b')
 myownarray.push('c')
-myownarray.delete(0)
+myownarray.delete(1)
 myownarray.push('a')
 
 myownarray.printArray()
