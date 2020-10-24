@@ -1,0 +1,60 @@
+# step 1: check if the sorted list is NOT EMPTY
+# Step 2: retrieve each element of each array into a variable
+# Step 3: compare the retrieved elements and put the smaller one in the final MERGED list
+# Step 4: increment the index of the list whose element was put into the MERGED list
+
+
+def generateLists():
+    list1 = []
+    sizeList1 = int(input("enter size of List 1: "))
+    print("Enter elements in sorted order separated by return key: ")
+    for item1 in range(0, sizeList1):
+        inputValue1 = int(input())
+        list1.append(inputValue1)
+    list2 = []
+    sizeList2 = int(input("enter size of List 2: "))
+    print("Enter elements in sorted order separated by return key: ")
+    for item2 in range(0, sizeList2):
+        inputValue2 = int(input())
+        list2.append(inputValue2)
+
+    return list1, list2
+
+
+def mergeLists(list1, list2):
+    mergedList = []
+    #input validation
+    if(len(list1) is 0):
+        print("List1 is empty")
+        return list2
+    if (len(list2) is 0):
+        print("List2 is empty")
+        return list1
+    size_1 = len(list1)
+    size_2 = len(list2)
+    i = 0
+    j = 0
+    while(i < size_1 and j < size_2):
+        if(list1[i] < list2[j]):
+            mergedList.append(list1[i])
+            i= i +1
+        else:
+            mergedList.append(list2[j])
+            j = j+1
+
+    #bcs the last element of whichever list is longer is skipped, we add it to the end of the mergedlist
+    mergedList = mergedList + list1[i:] + list2[j:]
+    return mergedList
+
+list1 = []
+list2 = []
+list1, list2 = generateLists()
+mergedLists = mergeLists(list1, list2)
+print(mergedLists)
+
+
+#Input :
+# 0 3 4 31
+# 4 6 30
+#Output
+# 0 3 4 4 6 30 31
