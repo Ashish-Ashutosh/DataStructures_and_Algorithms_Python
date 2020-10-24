@@ -42,7 +42,7 @@ def mergeLists(list1, list2):
             mergedList.append(list2[j])
             j = j+1
 
-    #bcs the last element of whichever list is longer is skipped, we add it to the end of the mergedlist
+    #bcs the last element of whichever list is longer is skipped (after it has been compared to every other element in the other list), we add it to the end of the mergedlist
     mergedList = mergedList + list1[i:] + list2[j:]
     return mergedList
 
